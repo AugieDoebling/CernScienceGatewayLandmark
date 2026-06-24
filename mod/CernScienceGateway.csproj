@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    CS2 code-mod project.
+
+    PREREQUISITE: install the Cities: Skylines II modding toolchain from inside
+    the game (Main menu > Paradox Mods / Tools), which sets the CSII_TOOLPATH
+    environment variable and provides Mod.props / Mod.targets. Those imports
+    pull in references to the game assemblies (Game.dll, Colossal.*, Unity.*),
+    so you do NOT list them manually here.
+
+    Easiest path: generate a fresh mod with the toolchain template, then drop
+    Mod.cs and CernEffectsSystem.cs into it. This .csproj mirrors that template.
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Configurations>Debug;Release</Configurations>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <ModId>CernScienceGateway</ModId>
+  </PropertyGroup>
+
+  <!-- Provided by the installed toolchain. -->
+  <Import Project="$(CSII_TOOLPATH)\Mod\Mod.props" Condition="Exists('$(CSII_TOOLPATH)\Mod\Mod.props')" />
+  <Import Project="$(CSII_TOOLPATH)\Mod\Mod.targets" Condition="Exists('$(CSII_TOOLPATH)\Mod\Mod.targets')" />
+
+</Project>

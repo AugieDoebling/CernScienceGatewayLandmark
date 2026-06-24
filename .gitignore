@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Blender
+*.blend1
+*.blend2
+
+# .NET / mod build output
+mod/bin/
+mod/obj/
+*.user
+.vs/
